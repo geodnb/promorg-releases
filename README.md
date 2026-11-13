@@ -79,8 +79,8 @@ For Other, your provider or web host can tell you the IMAP server name; the port
 Then fill in the display name, email address and password, and click **Test connection** and **Save**, as for
 Gmail.
 
-- **Password:** most services need an **app password** here, not your normal password. The form says which,
-  and where to create one.
+- **App passwords.** Most services need an **app password** here, not your normal password. The form says
+  which, and where to create one.
 - **Encryption:** the app only connects with encryption (SSL/TLS or STARTTLS), never without.
 - **Outlook.com, Hotmail and Microsoft 365 aren't supported yet.** Microsoft no longer accepts passwords or app
   passwords for IMAP; it needs Microsoft's own sign-in.
