@@ -2,7 +2,7 @@
 
 If you run a music channel, label or radio show, your inbox fills up with promos: label and promo-platform
 mailouts, weekly digests, reminders, SoundCloud and Facebook message notifications, and artists sending tracks
-directly. Promo Organiser is a Windows app that reads those Gmail mailboxes for you. It sorts every email, turns
+directly. Promo Organiser is a Windows app that reads those mailboxes for you (Gmail and most other email services). It sorts every email, turns
 the promos into one tidy list of releases, and lets you track each one from "new" to "uploaded".
 
 - **Everything sorted into four views.** Promos, Messages (SoundCloud, Facebook and similar), Direct (personal
@@ -19,7 +19,8 @@ the promos into one tidy list of releases, and lets you track each one from "new
   - ⚠ marks promos with missing details.
 - **Your notes and permissions.** Keep notes on each release and record who gave you permission to upload it,
   and when.
-- **Several Gmail accounts at once.** A problem with one mailbox never stops the others.
+- **Several mailboxes at once.** Gmail, Yahoo, iCloud, AOL, Fastmail, Zoho or any other IMAP mailbox (not
+  Outlook or Hotmail yet). A problem with one mailbox never stops the others.
 - **Safe with your mail.** Mailboxes are opened read-only: the app never deletes, moves, labels or marks
   anything as read. Emails are shown as plain text; images and tracking pixels are never loaded. Passwords
   are kept in Windows Credential Manager, never in a file.
@@ -41,6 +42,11 @@ Neither file is code-signed, so the first time you run one, Windows SmartScreen 
 PC": click **More info**, then **Run anyway**.
 
 ## Add a mailbox
+
+Click **Add mailbox** at the top of the main window. The form has two tabs: **Gmail**, and **Other email
+service** (below).
+
+### Gmail
 
 Promo Organiser reads Gmail over IMAP using a Google **app password**: a separate 16-character password just
 for this app, which you can revoke at any time. Your normal Google password is never used.
@@ -65,8 +71,24 @@ for this app, which you can revoke at any time. Your normal Google password is n
 4. The app starts fetching straight away. The first time, it imports the last 90 days of mail; after that,
    **Refresh** (or **F5**) fetches only new mail.
 
-Repeat for each Gmail account. You can edit, test, disable or remove a mailbox in Settings › Mailboxes at any
-time; removing one deletes its saved password but keeps the mail already imported.
+### Other email services
+
+On the **Other email service** tab, choose your service: Yahoo Mail, iCloud Mail, AOL Mail, Fastmail, Zoho Mail,
+or **Other** for any other IMAP mailbox, such as your own domain's email. The server settings fill in for you.
+For Other, your provider or web host can tell you the IMAP server name; the port is usually 993 with SSL/TLS.
+Then fill in the display name, email address and password, and click **Test connection** and **Save**, as for
+Gmail.
+
+- **Password:** most services need an **app password** here, not your normal password. The form says which,
+  and where to create one.
+- **Encryption:** the app only connects with encryption (SSL/TLS or STARTTLS), never without.
+- **Outlook.com, Hotmail and Microsoft 365 aren't supported yet.** Microsoft no longer accepts passwords or app
+  passwords for IMAP; it needs Microsoft's own sign-in.
+
+### Afterwards
+
+Repeat for each account. You can edit, test, disable or remove a mailbox in Settings › Mailboxes at any time;
+removing one deletes its saved password but keeps the mail already imported.
 
 ## How to use it
 
