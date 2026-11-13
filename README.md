@@ -48,15 +48,22 @@ for this app, which you can revoke at any time. Your normal Google password is n
 1. **Create an app password.** Your Google account needs 2-Step Verification turned on. Go to
    [myaccount.google.com/apppasswords](https://myaccount.google.com/apppasswords), enter a name such as
    "Promo Organiser", and click **Create**. Copy the 16-character password it shows.
-2. **Add it in the app.** Open **Settings** (bottom left), go to **Mailboxes**, then click **Add…**.
+   - **Passkeys:** if you sign in to Google with a passkey, that's fine; you still create an app password the
+     same way.
+   - **No app passwords option?** Google doesn't offer app passwords for work or school accounts, for accounts
+     in Advanced Protection, or when 2-Step Verification uses only security keys.
+   - **Changed your Google password?** Google deletes your app passwords when you do. Create a new one and
+     update the mailbox in Settings › Mailboxes.
+2. **Add it in the app.** Click **Add mailbox** at the top of the main window. You can also use Settings ›
+   Mailboxes › **Add…**. The form's **Get an app password from Google…** button opens step 1's page.
    - **Display name:** a short name shown in the app, for example "Channel".
    - **Gmail address.**
    - **Google app password**, from step 1.
    - **Folder:** leave it as `INBOX`. Choose `[Gmail]/All Mail` instead if Gmail filters skip the inbox for your
      promos (this also reads mail you sent, which goes to Other).
 3. Click **Test connection**. It should say it connected. Then click **Save**.
-4. Close Settings and click **Refresh** (or press **F5**). The first time, the last 90 days of mail are
-   imported; after that, only new mail.
+4. The app starts fetching straight away. The first time, it imports the last 90 days of mail; after that,
+   **Refresh** (or **F5**) fetches only new mail.
 
 Repeat for each Gmail account. You can edit, test, disable or remove a mailbox in Settings › Mailboxes at any
 time; removing one deletes its saved password but keeps the mail already imported.
