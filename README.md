@@ -9,7 +9,8 @@ the promos into one tidy list of releases, and lets you track each one from "new
   emails from artists and labels, and files sent through WeTransfer, Dropbox or Google Drive) and Other
   (newsletters and anything the app wasn't sure about). Every email lands in one of them; nothing is deleted.
 - **One release per promo.** Artist, title, label, catalogue number, release date and the promo link are read
-  from FATdrop and Label Engine emails, including each entry in a weekly digest. Reminders, digests and the
+  from FATdrop, Label Engine, Inflyte, Promo-Box, Promoly and Promo-Cloud emails, and from labels that mail their
+  own promos. Each entry in a weekly digest or a label's list of releases becomes its own release. Reminders, digests and the
   same promo arriving in several mailboxes all land on the same release instead of piling up as duplicates.
 - **A workflow for each release.** New, Listened, Shortlisted, Scheduled, Uploaded or Rejected, with a tab for
   each and keyboard shortcuts to move releases between them.
@@ -25,7 +26,7 @@ the promos into one tidy list of releases, and lets you track each one from "new
 - **Safe with your mail.**
   - Mailboxes are opened read-only: the app never deletes, moves, labels or marks anything as read.
   - Emails are shown as plain text. Images and tracking pixels are never loaded, and attachments are listed
-    but never opened.
+    but never opened. The one exception is a cover you choose to download (below): the app asks first.
   - Promo-platform emails are checked against your mail service's anti-forgery results, so a forged "FATdrop"
     email isn't trusted.
   - Passwords are kept in Windows Credential Manager, never in a file.
@@ -99,7 +100,8 @@ removing one deletes its saved password but keeps the mail already imported.
 
 ## How to use it
 
-- **Refresh (F5)** fetches new mail from every mailbox. It also runs when the app starts.
+- **Refresh (F5)** fetches new mail from every mailbox. It also runs when the app starts, and every 15 minutes
+  while the app is open (change this, or turn it off, in Settings › Mailboxes).
   - **Stop** cancels a sync, and the next Refresh carries on from there.
   - Each mailbox's result shows as soon as it finishes. Refresh works again straight away for any mailbox that
     has finished.
@@ -127,6 +129,13 @@ removing one deletes its saved password but keeps the mail already imported.
     (**Dismiss all shown**) does every email the search and filters show. "Hide handled" hides the ones
     you've dealt with.
   - **Create release from this** turns a message or direct email into a release.
+- **Cover art (optional).** The ⤓ button at the end of a row downloads that promo's cover, after asking. It
+  says which server it will contact and what that server could see (your IP address, and possibly that you
+  looked). Downloaded covers show as small thumbnails in the first column. The details pane has a **Promo art**
+  section with a bigger preview and **Save to PC…**. Nothing is downloaded unless you click.
+- **New promo services.** Mailing-list mail that reads like a promo from a service or label the app doesn't
+  know yet is marked ★ in Other. Tick **Possible promos** to see just those. If one is a promo, move it to Promo
+  and that sender's mail goes there from now on.
 - **Wrong category?** Use **Move to ▾**. The app remembers the sender, so their future mail goes to the same
   place, and offers to move their earlier emails too. Promo platforms are the exception: they send for many
   labels from one address. Manage these rules, or add your own, in Settings › Sender rules.
@@ -165,7 +174,8 @@ The hash should match the one in the `.sha256` file.
   update. You can turn this off in Settings › About & updates.
   - Nothing about you or your mail is sent.
   - As with any web request, those sites see your IP address.
-- **Everything else stays on your PC.** The only other connections are to your own mail servers. There's no
+- **Everything else stays on your PC.** The only other connections are to your own mail servers, and to a
+  promo service's image server when you choose to download a cover. There's no
   telemetry, analytics or crash reporting.
 - **Saved passwords** are protected from other Windows accounts, not from other programs you run.
 - **The database isn't encrypted.** It holds your mail, including your personal promo links. Back it up with
