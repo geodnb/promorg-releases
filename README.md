@@ -6,24 +6,29 @@ directly. Promo Organiser is a Windows app that reads those mailboxes for you (G
 the promos into one tidy list of releases, and lets you track each one from "new" to "uploaded".
 
 - **Everything sorted into four views.** Promos, Messages (SoundCloud, Facebook and similar), Direct (personal
-  emails from artists and labels) and Other (newsletters and anything the app wasn't sure about). Nothing is
-  ever hidden or thrown away.
+  emails from artists and labels, and files sent through WeTransfer, Dropbox or Google Drive) and Other
+  (newsletters and anything the app wasn't sure about). Every email lands in one of them; nothing is deleted.
 - **One release per promo.** Artist, title, label, catalogue number, release date and the promo link are read
   from FATdrop and Label Engine emails, including each entry in a weekly digest. Reminders, digests and the
   same promo arriving in several mailboxes all land on the same release instead of piling up as duplicates.
 - **A workflow for each release.** New, Listened, Shortlisted, Scheduled, Uploaded or Rejected, with a tab for
   each and keyboard shortcuts to move releases between them.
 - **Spot problems at a glance.**
+  - ● marks a release that got a new email after you'd dealt with it; it shows in New again until you've seen it.
   - ⏳ marks releases that aren't out yet, so you don't upload too early.
   - ⚑ marks release dates that look wrong, for example when two emails disagree.
   - ⚠ marks promos with missing details.
 - **Your notes and permissions.** Keep notes on each release and record who gave you permission to upload it,
   and when.
-- **Several mailboxes at once.** Gmail, Yahoo, iCloud, AOL, Fastmail, Zoho or any other IMAP mailbox (not
+- **Several mailboxes at once.** Gmail, and Yahoo, iCloud, AOL, Fastmail, Zoho or any other IMAP mailbox (not
   Outlook or Hotmail yet). A problem with one mailbox never stops the others.
-- **Safe with your mail.** Mailboxes are opened read-only: the app never deletes, moves, labels or marks
-  anything as read. Emails are shown as plain text; images and tracking pixels are never loaded. Passwords
-  are kept in Windows Credential Manager, never in a file.
+- **Safe with your mail.**
+  - Mailboxes are opened read-only: the app never deletes, moves, labels or marks anything as read.
+  - Emails are shown as plain text. Images and tracking pixels are never loaded, and attachments are listed
+    but never opened.
+  - Promo-platform emails are checked against your mail service's anti-forgery results, so a forged "FATdrop"
+    email isn't trusted.
+  - Passwords are kept in Windows Credential Manager, never in a file.
 
 ## Install
 
@@ -77,11 +82,13 @@ On the **Other email service** tab, choose your service: Yahoo Mail, iCloud Mail
 or **Other** for any other IMAP mailbox, such as your own domain's email. The server settings fill in for you.
 For Other, your provider or web host can tell you the IMAP server name; the port is usually 993 with SSL/TLS.
 Then fill in the display name, email address and password, and click **Test connection** and **Save**, as for
-Gmail.
+Gmail. The listed services use their published settings. They should work, but not all have been tried with a
+real account yet. If one doesn't, Test connection says why.
 
 - **App passwords.** Most services need an **app password** here, not your normal password. The form says
   which, and where to create one.
-- **Encryption:** the app only connects with encryption (SSL/TLS or STARTTLS), never without.
+- **Encryption:** the app only connects with encryption (SSL/TLS or STARTTLS), never without. Choose SSL/TLS
+  (port 993) when your service offers it.
 - **Outlook.com, Hotmail and Microsoft 365 aren't supported yet.** Microsoft no longer accepts passwords or app
   passwords for IMAP; it needs Microsoft's own sign-in.
 
@@ -93,22 +100,31 @@ removing one deletes its saved password but keeps the mail already imported.
 ## How to use it
 
 - **Refresh (F5)** fetches new mail from every mailbox. It also runs when the app starts.
+  - **Stop** cancels a sync, and the next Refresh carries on from there.
+  - Each mailbox's result shows as soon as it finishes. Refresh works again straight away for any mailbox that
+    has finished.
 - **Promos.** Your releases, one row each, in tabs by status.
-  - **Find releases:** click a column heading to sort. Narrow the list with the search box and the Label,
-    Artist, Platform and Mailbox filters.
-  - **Open promo** (Ctrl+O, or double-click) opens the promo link in your browser. If the promo came to more
-    than one mailbox, you choose which mailbox's link to open (links are personal to each account).
+  - **Find releases:** click a column heading to sort. Narrow the list with the search box (Ctrl+F) and the
+    Label, Artist, Platform and Mailbox filters.
+  - **Open promo** (Ctrl+O, Enter, or double-click) opens the promo link in your browser. If the promo came to
+    more than one mailbox, you choose which mailbox's link to open (links are personal to each account).
   - **Ctrl+1 to Ctrl+6** move the selected releases to New, Listened, Shortlisted, Scheduled, Uploaded or
     Rejected. Right-click the list for the same options.
-  - **The panel on the right** shows the selected release. Click into it and it widens. Edit any field, add
-    notes or permission details, then **Save changes**.
+  - **The panel on the right** shows the selected release (F2 jumps to it). Click into it and it widens.
+    - Edit any field, add notes or permission details, then **Save changes** (Ctrl+S).
+    - If you leave a release with unsaved changes, the app asks first.
+    - **Read email** shows the text, links and attachments of any email linked to the release.
+    - **Seen it** clears the ● mark.
   - **Release dates:** if a date is flagged ⚑, the panel says why. Fix it, or click **The date is right**.
     "Dates to check" above the list shows only flagged ones.
 - **Messages, Direct and Other.** One email per row.
-  - **Read an email:** select it to read it as plain text.
-  - **Open a link:** use **Open conversation** or **Open link**. For Direct emails, any Google Drive, Dropbox
-    or WeTransfer links are listed for you.
-  - **Done with an email:** **Mark handled** (Dismiss in Other) ticks it off. "Hide handled" hides the ones
+  - **Read an email:** select it to read it as plain text. Attachments are listed by name and size: open the
+    email in your webmail to get them.
+  - **Open a link:** every link in the email is listed with the site it goes to, each with an Open button.
+    File-sharing links (Google Drive, Dropbox, WeTransfer and others) come first. A link to a look-alike web
+    address is shown in its real form, and the app asks before opening it.
+  - **Done with an email:** **Mark handled** (Dismiss in Other) ticks it off. **Mark all shown handled**
+    (**Dismiss all shown**) does every email the search and filters show. "Hide handled" hides the ones
     you've dealt with.
   - **Create release from this** turns a message or direct email into a release.
 - **Wrong category?** Use **Move to ▾**. The app remembers the sender, so their future mail goes to the same
@@ -120,21 +136,40 @@ removing one deletes its saved password but keeps the mail already imported.
   - **Artist names:** names that contain "&" but are one act.
   - **Release dates:** choose which date checks run.
   - **Appearance:** light, dark or match Windows.
-  - **About & updates:** versions and the update check.
-  - **Maintenance:** re-run sorting on stored mail, and open the data folder.
+  - **About & updates:** versions, the update check, and **Check a download** (see below).
+  - **Maintenance:** re-run sorting on stored mail, **Back up now**, **Export releases to CSV**, and open the
+    data folder.
+- **Alt+1 to Alt+4** switch between Promos, Messages, Direct and Other.
 - The line at the bottom of the window shows the app version and the .NET version it runs on. It turns red
   when either is out of date.
 
 ## Check a download
 
-Each download has a `.sha256` file next to it. In PowerShell:
+Each download has a `.sig` file: a signature made with the Promo Organiser release key, which only the developer
+holds. Download the `.sig` into the same folder as the `.exe`. Then, in a copy of Promo Organiser you already
+have, use **Settings › About & updates › Check a download…** and pick the `.exe`. It says whether the file is
+genuine. An installed copy does this check by itself before installing an update. It never offers an update that
+isn't signed.
+
+Each download also has a `.sha256` file, which only shows the file arrived intact. In PowerShell:
 
 ```
 Get-FileHash .\PromoOrganiser-<version>-Setup.exe -Algorithm SHA256
 ```
 
-The hash should match the one in the `.sha256` file. Each download also has a `.sig` file: a release signature
-that the app checks before installing an update.
+The hash should match the one in the `.sha256` file.
+
+## Privacy
+
+- **When the app starts,** it asks GitHub whether there's a new version and Microsoft whether there's a .NET
+  update. You can turn this off in Settings › About & updates.
+  - Nothing about you or your mail is sent.
+  - As with any web request, those sites see your IP address.
+- **Everything else stays on your PC.** The only other connections are to your own mail servers. There's no
+  telemetry, analytics or crash reporting.
+- **Saved passwords** are protected from other Windows accounts, not from other programs you run.
+- **The database isn't encrypted.** It holds your mail, including your personal promo links. Back it up with
+  Settings › Maintenance › Back up now.
 
 ## Uninstall
 
@@ -143,8 +178,9 @@ that the app checks before installing an update.
 
 Either way, your database (`%LOCALAPPDATA%\PromoOrganiser`) and the app passwords saved in Windows Credential
 Manager are left in place, so reinstalling picks up where you left off. Delete them yourself if you want them
-gone, and revoke the app password at
-[myaccount.google.com/apppasswords](https://myaccount.google.com/apppasswords).
+gone, and revoke the app passwords you made for it:
+- **Gmail:** at [myaccount.google.com/apppasswords](https://myaccount.google.com/apppasswords).
+- **Other services:** in your account's security settings, where you created them.
 
 ---
 
