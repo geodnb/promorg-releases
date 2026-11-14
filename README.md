@@ -129,10 +129,16 @@ removing one deletes its saved password but keeps the mail already imported.
     (**Dismiss all shown**) does every email the search and filters show. "Hide handled" hides the ones
     you've dealt with.
   - **Create release from this** turns a message or direct email into a release.
-- **Cover art (optional).** The ⤓ button at the end of a row downloads that promo's cover, after asking. It
-  says which server it will contact and what that server could see (your IP address, and possibly that you
-  looked). Downloaded covers show as small thumbnails in the first column. The details pane has a **Promo art**
-  section with a bigger preview and **Save to PC…**. Nothing is downloaded unless you click.
+- **Download a promo.** The ⤓ button in the **Art** column (or **Download…** in the details pane) opens a small
+  window to choose what to save, and where:
+  - **the cover art.** The window says which server the cover comes from and what that server could see: your
+    IP address, and possibly that you looked.
+  - **the promo details**, as a text file: artist, title, label, catalogue number, release date, links, your
+    notes, and the text of the promo's emails.
+  - **both.**
+
+  Downloaded covers also show as small thumbnails in the first column and in the details pane's **Promo art**
+  section. Nothing is downloaded unless you click Download.
 - **New promo services.** Mailing-list mail that reads like a promo from a service or label the app doesn't
   know yet is marked ★ in Other. Tick **Possible promos** to see just those. If one is a promo, move it to Promo
   and that sender's mail goes there from now on.
