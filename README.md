@@ -7,28 +7,37 @@ the promos into one tidy list of releases, and lets you track each one from "new
 
 - **Everything sorted into four views.** Promos, Messages (SoundCloud, Facebook and similar), Direct (personal
   emails from artists and labels, and files sent through WeTransfer, Dropbox or Google Drive) and Other
-  (newsletters and anything the app wasn't sure about). Every email lands in one of them; nothing is deleted.
+  (newsletters and anything the app wasn't sure about). Every email lands in one of them, and nothing is ever
+  deleted from your mailbox.
 - **One release per promo.** Artist, title, label, catalogue number, release date and the promo link are read
   from FATdrop, Label Engine, Inflyte, Promo-Box, Promoly and Promo-Cloud emails, and from labels that mail their
   own promos. Each entry in a weekly digest or a label's list of releases becomes its own release. Reminders, digests and the
   same promo arriving in several mailboxes all land on the same release instead of piling up as duplicates.
+  Promos from a label or service the app doesn't know yet (a label's own mailout or list of promos, a
+  "(PROMO) Artist - Title" newsletter) go to Promos marked ★: click **It's a promo** once and that sender's promos
+  come in unmarked, or **Not a promo** to send its mail to Other. Invitations to receive a label's promos show
+  in Promos marked ✉, with the opt-in page as the link.
 - **A workflow for each release.** New, Listened, Shortlisted, Scheduled, Uploaded or Rejected, with a tab for
   each and keyboard shortcuts to move releases between them.
 - **Spot problems at a glance.**
   - ● marks a release that got a new email after you'd dealt with it; it shows in New again until you've seen it.
   - ⏳ marks releases that aren't out yet, so you don't upload too early.
+  - When an email gives a month but no day ("forthcoming November"), the release shows *exp. Nov 26* until you type the day.
   - ⚑ marks release dates that look wrong, for example when two emails disagree.
-  - ⚠ marks promos with missing details.
+  - ⚠ marks promos with missing details. A missing release date shows only in the details pane, since many promo emails don't give one.
 - **Your notes and permissions.** Keep notes on each release and record who gave you permission to upload it,
   and when.
 - **Several mailboxes at once.** Gmail, and Yahoo, iCloud, AOL, Fastmail, Zoho or any other IMAP mailbox (not
-  Outlook or Hotmail yet). A problem with one mailbox never stops the others.
+  Outlook or Hotmail yet). Each mailbox gets its own tab, with its own releases, statuses and notes, and an All
+  mailboxes tab shows everything together. A problem with one mailbox never stops the others.
+- **Help built in.** The **?** above Settings or next to the minimise button (or F1) explains how to set up and use every feature and menu.
 - **Safe with your mail.**
   - Mailboxes are opened read-only: the app never deletes, moves, labels or marks anything as read.
   - Emails are shown as plain text. Images and tracking pixels are never loaded, and attachments are listed
     but never opened. The one exception is a cover you choose to download (below): the app asks first.
   - Promo-platform emails are checked against your mail service's anti-forgery results, so a forged "FATdrop"
-    email isn't trusted.
+    email isn't trusted. Mail from a label or service the app doesn't know is marked ★ until you've confirmed
+    the sender (above).
   - Passwords are kept in Windows Credential Manager, never in a file.
 
 ## Install
@@ -108,8 +117,8 @@ removing one deletes its saved password but keeps the mail already imported.
 - **Promos.** Your releases, one row each, in tabs by status.
   - **Find releases:** click a column heading to sort. Narrow the list with the search box (Ctrl+F) and the
     Label, Artist, Platform and Mailbox filters.
-  - **Open promo** (Ctrl+O, Enter, or double-click) opens the promo link in your browser. If the promo came to
-    more than one mailbox, you choose which mailbox's link to open (links are personal to each account).
+  - **Open promo** (Ctrl+O, Enter, or double-click) opens the promo link in your browser. If several emails for
+    the release have links, you choose which one to open.
   - **Ctrl+1 to Ctrl+6** move the selected releases to New, Listened, Shortlisted, Scheduled, Uploaded or
     Rejected. Right-click the list for the same options.
   - **The panel on the right** shows the selected release (F2 jumps to it). Click into it and it widens.
@@ -117,6 +126,11 @@ removing one deletes its saved password but keeps the mail already imported.
     - If you leave a release with unsaved changes, the app asks first.
     - **Read email** shows the text, links and attachments of any email linked to the release.
     - **Seen it** clears the ● mark.
+  - **Remove releases you don't want:** **Remove…** (Del, or right-click) removes the selected releases, and
+    **Remove empty** removes the ones nothing could be read from. The app asks first.
+    - Their emails stay: they move to Other, and nothing is deleted from your mailbox.
+    - The release's status, notes and permission details are deleted.
+    - A reminder or re-read of the same promo doesn't bring it back. To bring it back, move its email to Promo.
   - **Release dates:** if a date is flagged ⚑, the panel says why. Fix it, or click **The date is right**.
     "Dates to check" above the list shows only flagged ones.
 - **Messages, Direct and Other.** One email per row.
@@ -134,17 +148,30 @@ removing one deletes its saved password but keeps the mail already imported.
   - **the cover art.** The window says which server the cover comes from and what that server could see: your
     IP address, and possibly that you looked.
   - **the promo details**, as a text file: artist, title, label, catalogue number, release date, links, your
-    notes, and the text of the promo's emails.
+    notes, and the text of the promo's emails. The links are personal to your account, so don't pass the file
+    on as it is.
   - **both.**
 
   Downloaded covers also show as small thumbnails in the first column and in the details pane's **Promo art**
   section. Nothing is downloaded unless you click Download.
-- **New promo services.** Mailing-list mail that reads like a promo from a service or label the app doesn't
-  know yet is marked ★ in Other. Tick **Possible promos** to see just those. If one is a promo, move it to Promo
-  and that sender's mail goes there from now on.
+- **New promo services and labels.** Mail that reads like a promo from a service or label the app doesn't know
+  yet goes to Promos marked ★ (**★ To confirm** shows just those). In the details pane, **It's a promo** accepts
+  the sender, and its later mail comes in unmarked. **Not a promo** moves it, and the sender's later mail, to Other.
+- **Right-click** an email in Messages, Direct or Other to open it, mark it handled, create a release, read it
+  in its own window, or move it to another view.
 - **Wrong category?** Use **Move to ▾**. The app remembers the sender, so their future mail goes to the same
   place, and offers to move their earlier emails too. Promo platforms are the exception: they send for many
   labels from one address. Manage these rules, or add your own, in Settings › Sender rules.
+- **Several mailboxes.** With more than one mailbox, a row of tabs appears above the list: **All mailboxes**,
+  then one per mailbox (Ctrl+Tab and Ctrl+Shift+Tab switch between them). Promos, Messages, Direct and Other,
+  and their counts, follow the tab.
+  - Each mailbox keeps its own releases: the same promo in two mailboxes is two releases, each with its own
+    status, notes and permission. Releases shared before 0.3.0 are split into one per mailbox when you update,
+    and each copy keeps the status and notes it had.
+  - A rule learned by moving an email is for that email's mailbox only. Rules can also be for All mailboxes
+    (Settings › Sender rules), and a mailbox's own rule wins.
+  - Each mailbox remembers its own download folder. **Add promo** adds to the tab you're on.
+- **Help:** click **?** above Settings or next to the minimise button, or press F1.
 - **Add promo** adds music that reached you outside email.
 - **Settings** also has:
   - **Label spellings:** treat "Example Recs" and "Example Recordings" as one label.
@@ -154,6 +181,9 @@ removing one deletes its saved password but keeps the mail already imported.
   - **About & updates:** versions, the update check, and **Check a download** (see below).
   - **Maintenance:** re-run sorting on stored mail, **Back up now**, **Export releases to CSV**, and open the
     data folder.
+- **After an update,** the first start re-reads your stored mail with the new version's promo readers, so
+  older mail benefits too. A progress line shows at the bottom, and it can't be stopped part-way.
+  Releases you've changed are kept, and a notice says what moved.
 - **Alt+1 to Alt+4** switch between Promos, Messages, Direct and Other.
 - The line at the bottom of the window shows the app version and the .NET version it runs on. It turns red
   when either is out of date.
@@ -165,6 +195,9 @@ holds. Download the `.sig` into the same folder as the `.exe`. Then, in a copy o
 have, use **Settings › About & updates › Check a download…** and pick the `.exe`. It says whether the file is
 genuine. An installed copy does this check by itself before installing an update. It never offers an update that
 isn't signed.
+
+This check needs a copy of Promo Organiser you already have, so it can't vouch for your very first download.
+For that one, download only from this page.
 
 Each download also has a `.sha256` file, which only shows the file arrived intact. In PowerShell:
 
@@ -181,7 +214,7 @@ The hash should match the one in the `.sha256` file.
   - Nothing about you or your mail is sent.
   - As with any web request, those sites see your IP address.
 - **Everything else stays on your PC.** The only other connections are to your own mail servers, and to a
-  promo service's image server when you choose to download a cover. There's no
+  server a promo email names for its cover, when you choose to download that cover. There's no
   telemetry, analytics or crash reporting.
 - **Saved passwords** are protected from other Windows accounts, not from other programs you run.
 - **The database isn't encrypted.** It holds your mail, including your personal promo links. Back it up with
