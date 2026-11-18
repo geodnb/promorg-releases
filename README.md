@@ -1,8 +1,10 @@
-# Promo Organiser
+# Promorg
+
+Promorg used to be called Promo Organiser. Version 0.5.3 is the first release under the new name.
 
 If you run a music channel, label or radio show, your inbox fills up with promos: label and promo-platform
 mailouts, weekly digests, reminders, SoundCloud and Facebook message notifications, and artists sending tracks
-directly. Promo Organiser is a Windows app that reads those mailboxes for you (Gmail and most other email services). It sorts every email, turns
+directly. Promorg is a Windows app that reads those mailboxes for you (Gmail and most other email services). It sorts every email, turns
 the promos into one tidy list of releases, and lets you track each one from "new" to "uploaded".
 
 - **Everything sorted into four views.** Promos, Messages (SoundCloud, Facebook and similar), Direct (personal
@@ -47,11 +49,16 @@ are two ways to run it; pick one:
 
 | Download | What it is | Updates |
 | --- | --- | --- |
-| `PromoOrganiser-<version>-Setup.exe` (about 6 MB) | **Installer.** Adds Promo Organiser to the Start menu and to Settings › Apps, so you can uninstall it. Installs for your account with no admin rights, or for everyone. If the .NET 10 Desktop Runtime isn't on the PC, it offers to download it from Microsoft and install it. | Built in: Settings › About & updates › **Download and install** |
-| `PromoOrganiser-<version>-Standalone.exe` (about 67 MB) | **Standalone app.** One file, nothing to install, .NET included. Put it anywhere (Desktop, a USB stick) and double-click it. The first start takes a few seconds longer. | By hand: download the new `.exe` and use it instead of the old one |
+| `Promorg-<version>-Setup.exe` (about 6 MB) | **Installer.** Adds Promorg to the Start menu and to Settings › Apps, so you can uninstall it. Installs for your account with no admin rights, or for everyone. If the .NET 10 Desktop Runtime isn't on the PC, it offers to download it from Microsoft and install it. | Built in: Settings › About & updates › **Download and install** |
+| `Promorg-<version>-Standalone.exe` (about 67 MB) | **Standalone app.** One file, nothing to install, .NET included. Put it anywhere (Desktop, a USB stick) and double-click it. The first start takes a few seconds longer. | By hand: download the new `.exe` and use it instead of the old one |
 
-Both keep your data in the same place (`%LOCALAPPDATA%\PromoOrganiser`), so you can switch between them, update
-or uninstall without losing anything.
+Both keep your data in the same place (`%LOCALAPPDATA%\Promorg`), so you can switch between them, update
+or uninstall without losing anything. Coming from Promo Organiser? The first time 0.5.3 starts, it moves your
+data from the old folder, `%LOCALAPPDATA%\PromoOrganiser`, to `%LOCALAPPDATA%\Promorg`.
+
+A release may also have a `PromoOrganiser-<version>-Setup.exe`, with its `.sig`. It's the same installer under
+the old name, there only so that Promo Organiser 0.2.0 can find the update by itself. Download the `Promorg-`
+files.
 
 Neither file is code-signed, so the first time you run one, Windows SmartScreen may say it "protected your
 PC": click **More info**, then **Run anyway**.
@@ -63,12 +70,12 @@ service** (below).
 
 ### Gmail
 
-Promo Organiser reads Gmail over IMAP using a Google **app password**: a separate 16-character password just
+Promorg reads Gmail over IMAP using a Google **app password**: a separate 16-character password just
 for this app, which you can revoke at any time. Your normal Google password is never used.
 
 1. **Create an app password.** Your Google account needs 2-Step Verification turned on. Go to
    [myaccount.google.com/apppasswords](https://myaccount.google.com/apppasswords), enter a name such as
-   "Promo Organiser", and click **Create**. Copy the 16-character password it shows.
+   "Promorg", and click **Create**. Copy the 16-character password it shows.
    - **Passkeys:** if you sign in to Google with a passkey, that's fine; you still create an app password the
      same way.
    - **No app passwords option?** Google doesn't offer app passwords for work or school accounts, for accounts
@@ -190,19 +197,19 @@ removing one deletes its saved password but keeps the mail already imported.
 
 ## Check a download
 
-Each download has a `.sig` file: a signature made with the Promo Organiser release key, which only the developer
-holds. Download the `.sig` into the same folder as the `.exe`. Then, in a copy of Promo Organiser you already
+Each download has a `.sig` file: a signature made with the Promorg release key, which only the developer
+holds. Download the `.sig` into the same folder as the `.exe`. Then, in a copy of Promorg you already
 have, use **Settings › About & updates › Check a download…** and pick the `.exe`. It says whether the file is
 genuine. An installed copy does this check by itself before installing an update. It never offers an update that
 isn't signed.
 
-This check needs a copy of Promo Organiser you already have, so it can't vouch for your very first download.
+This check needs a copy of Promorg you already have, so it can't vouch for your very first download.
 For that one, download only from this page.
 
 Each download also has a `.sha256` file, which only shows the file arrived intact. In PowerShell:
 
 ```
-Get-FileHash .\PromoOrganiser-<version>-Setup.exe -Algorithm SHA256
+Get-FileHash .\Promorg-<version>-Setup.exe -Algorithm SHA256
 ```
 
 The hash should match the one in the `.sha256` file.
@@ -222,10 +229,10 @@ The hash should match the one in the `.sha256` file.
 
 ## Uninstall
 
-- **Installer version:** Windows **Settings › Apps › Installed apps › Promo Organiser › Uninstall**.
+- **Installer version:** Windows **Settings › Apps › Installed apps › Promorg › Uninstall**.
 - **Standalone version:** delete the `.exe`.
 
-Either way, your database (`%LOCALAPPDATA%\PromoOrganiser`) and the app passwords saved in Windows Credential
+Either way, your database (`%LOCALAPPDATA%\Promorg`) and the app passwords saved in Windows Credential
 Manager are left in place, so reinstalling picks up where you left off. Delete them yourself if you want them
 gone, and revoke the app passwords you made for it:
 - **Gmail:** at [myaccount.google.com/apppasswords](https://myaccount.google.com/apppasswords).
