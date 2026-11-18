@@ -42,7 +42,7 @@ the promos into one tidy list of releases, and lets you track each one from "new
 
 ## Install
 
-Download from the [latest release](https://github.com/geodnb/promo-organiser-releases/releases/latest). There
+Download from the [latest release](https://github.com/geodnb/promorg-releases/releases/latest). There
 are two ways to run it; pick one:
 
 | Download | What it is | Updates |
