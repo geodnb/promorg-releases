@@ -63,7 +63,8 @@ are two ways to run it; pick one:
 Both keep your data in the same place (`%LOCALAPPDATA%\Promorg`), so you can switch between them, update
 or uninstall without losing anything. Coming from Promo Organiser? The first time 0.5.4 starts, it moves your
 data from the old folder, `%LOCALAPPDATA%\PromoOrganiser`, to `%LOCALAPPDATA%\Promorg`. Close Promo Organiser
-first; if it's still open, Promorg asks you to close it.
+first; if it's still open, Promorg asks you to close it. If you can't see its window, end PromoOrganiser.exe in
+Task Manager.
 
 A release may also have a `PromoOrganiser-<version>-Setup.exe`, with its `.sig`. It's the same installer under
 the old name, there only so that Promo Organiser 0.2.0 can find the update by itself. Download the `Promorg-`
@@ -117,6 +118,9 @@ real account yet. If one doesn't, Test connection says why.
   (port 993) when your service offers it.
 - **Outlook.com, Hotmail and Microsoft 365 aren't supported yet.** Microsoft no longer accepts passwords or app
   passwords for IMAP; it needs Microsoft's own sign-in.
+- **Forgery checks on Other servers.** If your server adds no anti-forgery results to incoming mail, a forged
+  promo-platform email can't always be told apart from a real one, so on such a server don't fully trust a sender
+  check.
 
 ### Afterwards
 
