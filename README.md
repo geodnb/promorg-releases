@@ -1,6 +1,6 @@
 # Promorg
 
-Promorg used to be called Promo Organiser. Version 0.5.3 is the first release under the new name.
+Promorg used to be called Promo Organiser. Version 0.5.4 is the first release under the new name.
 
 If you run a music channel, label or radio show, your inbox fills up with promos: label and promo-platform
 mailouts, weekly digests, reminders, SoundCloud and Facebook message notifications, and artists sending tracks
@@ -23,10 +23,18 @@ the promos into one tidy list of releases, and lets you track each one from "new
   each and keyboard shortcuts to move releases between them.
 - **Spot problems at a glance.**
   - ● marks a release that got a new email after you'd dealt with it; it shows in New again until you've seen it.
-  - ⏳ marks releases that aren't out yet, so you don't upload too early.
-  - When an email gives a month but no day ("forthcoming November"), the release shows *exp. Nov 26* until you type the day.
+  - A clock icon next to the date marks releases that aren't out yet, so you don't upload too early.
+  - When an email gives a month but no day ("forthcoming November"), the release shows *exp. Nov 2026* until you type the day.
   - ⚑ marks release dates that look wrong, for example when two emails disagree.
   - ⚠ marks promos with missing details. A missing release date shows only in the details pane, since many promo emails don't give one.
+  - ⚠ also marks an artist the app had to work out (from the cover, the description or a tracklist) rather than
+    read from the email: check it, then correct it or click **They're right**.
+- **White labels.** When a label writes "Unknown Artist" on purpose, the release shows that, and isn't flagged as
+  missing an artist. A later email from the promo service that names the artist replaces it, even after you've
+  listened, unless you typed the artist in yourself. To find the artist sooner, use **Search the web** (below).
+- **Weekly summaries.** A promo platform's weekly round-up of your promos there (Inflyte's "Weekly Summary") shows
+  in Promos as one row per platform, marked ≡. Each week's summary joins that row and brings it back to New;
+  **Open promo** opens your promos on the platform.
 - **Your notes and permissions.** Keep notes on each release and record who gave you permission to upload it,
   and when.
 - **Several mailboxes at once.** Gmail, and Yahoo, iCloud, AOL, Fastmail, Zoho or any other IMAP mailbox (not
@@ -53,8 +61,9 @@ are two ways to run it; pick one:
 | `Promorg-<version>-Standalone.exe` (about 67 MB) | **Standalone app.** One file, nothing to install, .NET included. Put it anywhere (Desktop, a USB stick) and double-click it. The first start takes a few seconds longer. | By hand: download the new `.exe` and use it instead of the old one |
 
 Both keep your data in the same place (`%LOCALAPPDATA%\Promorg`), so you can switch between them, update
-or uninstall without losing anything. Coming from Promo Organiser? The first time 0.5.3 starts, it moves your
-data from the old folder, `%LOCALAPPDATA%\PromoOrganiser`, to `%LOCALAPPDATA%\Promorg`.
+or uninstall without losing anything. Coming from Promo Organiser? The first time 0.5.4 starts, it moves your
+data from the old folder, `%LOCALAPPDATA%\PromoOrganiser`, to `%LOCALAPPDATA%\Promorg`. Close Promo Organiser
+first; if it's still open, Promorg asks you to close it.
 
 A release may also have a `PromoOrganiser-<version>-Setup.exe`, with its `.sig`. It's the same installer under
 the old name, there only so that Promo Organiser 0.2.0 can find the update by itself. Download the `Promorg-`
@@ -65,8 +74,8 @@ PC": click **More info**, then **Run anyway**.
 
 ## Add a mailbox
 
-Click **Add mailbox** at the top of the main window. The form has two tabs: **Gmail**, and **Other email
-service** (below).
+Open **Settings** (bottom of the left rail) › **Mailboxes**, and click **Add mailbox…**. The form has two tabs:
+**Gmail**, and **Other email service** (below).
 
 ### Gmail
 
@@ -82,16 +91,16 @@ for this app, which you can revoke at any time. Your normal Google password is n
      in Advanced Protection, or when 2-Step Verification uses only security keys.
    - **Changed your Google password?** Google deletes your app passwords when you do. Create a new one and
      update the mailbox in Settings › Mailboxes.
-2. **Add it in the app.** Click **Add mailbox** at the top of the main window. You can also use Settings ›
-   Mailboxes › **Add…**. The form's **Get an app password from Google…** button opens step 1's page.
+2. **Add it in the app.** Open **Settings** › **Mailboxes** › **Add mailbox…**. The form's **Get an app password
+   from Google…** button opens step 1's page.
    - **Display name:** a short name shown in the app, for example "Channel".
    - **Gmail address.**
    - **Google app password**, from step 1.
    - **Folder:** leave it as `INBOX`. Choose `[Gmail]/All Mail` instead if Gmail filters skip the inbox for your
      promos (this also reads mail you sent, which goes to Other).
 3. Click **Test connection**. It should say it connected. Then click **Save**.
-4. The app starts fetching straight away. The first time, it imports the last 90 days of mail; after that,
-   **Refresh** (or **F5**) fetches only new mail.
+4. Close Settings, and the new mailbox's mail is fetched. The first time, it imports the last 90 days of mail;
+   after that, **Refresh** (or **F5**) fetches only new mail.
 
 ### Other email services
 
@@ -123,9 +132,13 @@ removing one deletes its saved password but keeps the mail already imported.
     has finished.
 - **Promos.** Your releases, one row each, in tabs by status.
   - **Find releases:** click a column heading to sort. Narrow the list with the search box (Ctrl+F) and the
-    Label, Artist, Platform and Mailbox filters.
-  - **Open promo** (Ctrl+O, Enter, or double-click) opens the promo link in your browser. If several emails for
-    the release have links, you choose which one to open.
+    Label, Artist and Platform filters. With more than one mailbox, the tabs above the list show one mailbox
+    or all (see "Several mailboxes" below).
+  - **Open promo** (Ctrl+O, Enter, or double-click) opens the promo link in your browser. If you also typed a
+    promo link in yourself, you choose which of the two to open.
+  - **Search the web** (in the details pane, or right-click › Search the web for this release) opens a web
+    search in your browser for the catalogue number, title and label, to find the artist when the email doesn't
+    say. The search goes to DuckDuckGo; the app itself fetches nothing.
   - **Ctrl+1 to Ctrl+6** move the selected releases to New, Listened, Shortlisted, Scheduled, Uploaded or
     Rejected. Right-click the list for the same options.
   - **The panel on the right** shows the selected release (F2 jumps to it). Click into it and it widens.
@@ -173,8 +186,8 @@ removing one deletes its saved password but keeps the mail already imported.
   then one per mailbox (Ctrl+Tab and Ctrl+Shift+Tab switch between them). Promos, Messages, Direct and Other,
   and their counts, follow the tab.
   - Each mailbox keeps its own releases: the same promo in two mailboxes is two releases, each with its own
-    status, notes and permission. Releases shared before 0.3.0 are split into one per mailbox when you update,
-    and each copy keeps the status and notes it had.
+    status, notes and permission. When you update from Promo Organiser 0.2.0, a release it shared between
+    mailboxes is split into one per mailbox, and each copy keeps the status and notes it had.
   - A rule learned by moving an email is for that email's mailbox only. Rules can also be for All mailboxes
     (Settings › Sender rules), and a mailbox's own rule wins.
   - Each mailbox remembers its own download folder. **Add promo** adds to the tab you're on.
@@ -191,7 +204,10 @@ removing one deletes its saved password but keeps the mail already imported.
 - **After an update,** the first start re-reads your stored mail with the new version's promo readers, so
   older mail benefits too. A progress line shows at the bottom, and it can't be stopped part-way.
   Releases you've changed are kept, and a notice says what moved.
-- **Alt+1 to Alt+4** switch between Promos, Messages, Direct and Other.
+- **Setlist.** Your own lists of promos in the order you'll play them: a DJ set, a radio show, a mix. In Promos,
+  right-click promos (or use **Add to setlist ▾** in the details pane) to add them; in Setlist, **Up** and
+  **Down** reorder them. A setlist can take promos from any mailbox.
+- **Alt+1 to Alt+5** switch between Promos, Messages, Direct, Other and Setlist.
 - The line at the bottom of the window shows the app version and the .NET version it runs on. It turns red
   when either is out of date.
 
@@ -223,6 +239,9 @@ The hash should match the one in the `.sha256` file.
 - **Everything else stays on your PC.** The only other connections are to your own mail servers, and to a
   server a promo email names for its cover, when you choose to download that cover. There's no
   telemetry, analytics or crash reporting.
+- **Search the web** sends the release's catalogue number, title and label to DuckDuckGo, through your browser,
+  only when you click it. Promo details can be unreleased, so use it only when you're happy for them to be
+  searched for.
 - **Saved passwords** are protected from other Windows accounts, not from other programs you run.
 - **The database isn't encrypted.** It holds your mail, including your personal promo links. Back it up with
   Settings › Maintenance › Back up now.
