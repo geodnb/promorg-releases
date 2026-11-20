@@ -166,9 +166,13 @@ removing one deletes its saved password but keeps the mail already imported.
   - **Open a link:** every link in the email is listed with the site it goes to, each with an Open button.
     File-sharing links (Google Drive, Dropbox, WeTransfer and others) come first. A link to a look-alike web
     address is shown in its real form, and the app asks before opening it.
-  - **Done with an email:** **Mark handled** (Dismiss in Other) ticks it off. **Mark all shown handled**
-    (**Dismiss all shown**) does every email the search and filters show. "Hide handled" hides the ones
-    you've dealt with.
+  - **Done with an email:** **Mark handled** (Dismiss in Other) ticks it off. Ctrl+click or Shift+click to
+    select several, and it marks them all. **Mark all shown handled** (**Dismiss all shown**) does every email
+    the search and filters show. "Hide handled" hides the ones you've dealt with.
+- **The counts on the left** show what's new in Promos, Messages, Direct and Other since you last opened each
+  one, so opening a view clears its count. Right-click a view for **Clear count**, or, in Messages, Direct and
+  Other, **Mark all as handled** (**Dismiss all**). Settings › Appearance › **Counts on the left** can make them
+  count everything not dealt with yet instead, or turn them off.
   - **Create release from this** turns a message or direct email into a release.
 - **Download a promo.** The ⤓ button in the **Art** column (or **Download…** in the details pane) opens a small
   window to choose what to save, and where:
