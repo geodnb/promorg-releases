@@ -191,9 +191,9 @@ removing one deletes its saved password but keeps the mail already imported.
   labels from one address. Manage these rules, or add your own, in Settings › Sender rules.
 - **Several mailboxes.** With more than one mailbox, a row of tabs appears above the list: **All mailboxes**,
   then one per mailbox (Ctrl+Tab and Ctrl+Shift+Tab switch between them). Promos, Messages, Direct and Other,
-  and their counts, follow the tab. In a narrower window the Promos list hides its Platform column first, with
-  the received date on the All mailboxes tab (so each promo's mailbox still shows) or the Mailbox column on a
-  mailbox's own tab.
+  and their counts, follow the tab. In a narrower window the Promos list hides its Platform column first. Narrower
+  still, it also hides the received date on the All mailboxes tab (so each promo's mailbox still shows), or the
+  Mailbox column on a mailbox's own tab.
   - Each mailbox keeps its own releases: the same promo in two mailboxes is two releases, each with its own
     status, notes and permission. When you update from Promo Organiser 0.2.0, a release it shared between
     mailboxes is split into one per mailbox, and each copy keeps the status and notes it had.
