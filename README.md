@@ -61,7 +61,7 @@ are two ways to run it; pick one:
 | `Promorg-<version>-Standalone.exe` (about 67 MB) | **Standalone app.** One file, nothing to install, .NET included. Put it anywhere (Desktop, a USB stick) and double-click it. The first start takes a few seconds longer. | By hand: download the new `.exe` and use it instead of the old one |
 
 Both keep your data in the same place (`%LOCALAPPDATA%\Promorg`), so you can switch between them, update
-or uninstall without losing anything. Coming from Promo Organiser? The first time 0.5.4 starts, it moves your
+or uninstall without losing anything. Coming from Promo Organiser? The first time Promorg starts, it moves your
 data from the old folder, `%LOCALAPPDATA%\PromoOrganiser`, to `%LOCALAPPDATA%\Promorg`. Close Promo Organiser
 first; if it's still open, Promorg asks you to close it. If you can't see its window, end PromoOrganiser.exe in
 Task Manager.
@@ -146,7 +146,10 @@ removing one deletes its saved password but keeps the mail already imported.
   - **Ctrl+1 to Ctrl+6** move the selected releases to New, Listened, Shortlisted, Scheduled, Uploaded or
     Rejected. Right-click the list for the same options.
   - **The panel on the right** shows the selected release (F2 jumps to it). Click into it and it widens.
-    - Edit any field, add notes or permission details, then **Save changes** (Ctrl+S).
+    - Its top shows the artist, title, label and catalogue number, with **Open promo**, **Add to setlist** and
+      **Search the web** under them.
+    - Edit any field, add notes or permission details, then **Save changes** (Ctrl+S). The distributor and a link
+      you typed in are under **More details**, which opens by itself when either has something in it.
     - If you leave a release with unsaved changes, the app asks first.
     - **Read email** shows the text, links and attachments of any email linked to the release.
     - **Seen it** clears the ● mark.
@@ -188,7 +191,9 @@ removing one deletes its saved password but keeps the mail already imported.
   labels from one address. Manage these rules, or add your own, in Settings › Sender rules.
 - **Several mailboxes.** With more than one mailbox, a row of tabs appears above the list: **All mailboxes**,
   then one per mailbox (Ctrl+Tab and Ctrl+Shift+Tab switch between them). Promos, Messages, Direct and Other,
-  and their counts, follow the tab.
+  and their counts, follow the tab. In a narrower window the Promos list hides its Platform column first, with
+  the received date on the All mailboxes tab (so each promo's mailbox still shows) or the Mailbox column on a
+  mailbox's own tab.
   - Each mailbox keeps its own releases: the same promo in two mailboxes is two releases, each with its own
     status, notes and permission. When you update from Promo Organiser 0.2.0, a release it shared between
     mailboxes is split into one per mailbox, and each copy keeps the status and notes it had.
