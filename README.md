@@ -223,7 +223,11 @@ removing one deletes its saved password but keeps the mail already imported.
   Releases you've changed are kept, and a notice says what moved.
 - **Setlist.** Your own lists of promos in the order you'll play them: a DJ set, a radio show, a mix. In Promos,
   right-click promos (or use **Add to setlist ▾** in the details pane) to add them; in Setlist, **Up** and
-  **Down** reorder them. A setlist can take promos from any mailbox.
+  **Down** reorder them. A setlist can take promos from any mailbox. In the **Track** column, pick which track you'll
+  play from each promo (from the tracklist in its emails), or type one. **Export…** saves it as a CSV file, a
+  tracklist ("Artist - Track"), or a playlist for DJ software (.m3u8: rekordbox, Serato, Traktor, Engine DJ,
+  VirtualDJ): pick the folder with the promos' audio files, and Promorg finds each track by its file name and
+  tells you which it couldn't find.
 - **Alt+1 to Alt+5** switch between Promos, Messages, Direct, Other and Setlist.
 - The line at the bottom of the window shows the app version and the .NET version it runs on. It turns red
   when either is out of date.
