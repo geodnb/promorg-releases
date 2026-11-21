@@ -228,7 +228,10 @@ removing one deletes its saved password but keeps the mail already imported.
   tracklist ("Artist - Track"), or a playlist for DJ software (.m3u8: rekordbox, Serato, Traktor, Engine DJ,
   VirtualDJ): pick the folder with the promos' audio files, and Promorg finds each track by its file name and
   tells you which it couldn't find.
-- **Alt+1 to Alt+5** switch between Promos, Messages, Direct, Other and Setlist.
+- **Contacts.** The artists, labels, distributors, promo platforms and email senders in your promos, each on its own
+  tab, worked out from your promos (nothing to keep up to date). Select one for its promos by status and the email
+  addresses its promos came from; **Show in Promos** shows only that contact's promos.
+- **Alt+1 to Alt+6** switch between Promos, Messages, Direct, Other, Setlist and Contacts.
 - The line at the bottom of the window shows the app version and the .NET version it runs on. It turns red
   when either is out of date.
 
