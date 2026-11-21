@@ -42,6 +42,13 @@ the promos into one tidy list of releases, and lets you track each one from "new
   Outlook or Hotmail yet). Each mailbox gets its own tab, with its own releases, statuses and notes, and an All
   mailboxes tab shows everything together. A problem with one mailbox never stops the others.
 - **Help built in.** The **?** above Settings or next to the minimise button (or F1) explains how to set up and use every feature and menu.
+- **Make it look the way you like.** The appearance button (a half-filled circle, at the top right and at the foot
+  of the left rail, or Ctrl+Shift+L) picks one of 15 themes (Light, Dark, Black, Sepia, Dusk, Midnight, Forest,
+  Plum, Studio, Mint, Sky, Rose, two high-contrast ones, or Match Windows), a finish (Matte, Soft or Gloss), the
+  text size (85% to 175%; Ctrl+Plus, Ctrl+Minus, Ctrl+0) and the spacing. Make your own theme with a colour editor
+  that keeps text readable, and share it as a small file. Each status has a shape as well as a colour, and there's
+  a colour-blind-safe set. If a look ever goes wrong, hold Shift while Promorg starts, or press Ctrl+Shift+F12 and
+  then Enter, for readable colours again.
 - **Safe with your mail.**
   - Mailboxes are opened read-only: the app never deletes, moves, labels or marks anything as read.
   - Emails are shown as plain text. Images and tracking pixels are never loaded, and attachments are listed
@@ -221,7 +228,9 @@ was saved for: change a mailbox's server or login and Promorg asks for the passw
   - **Label spellings:** treat "Example Recs" and "Example Recordings" as one label.
   - **Artist names:** names that contain "&" but are one act.
   - **Release dates:** choose which date checks run.
-  - **Appearance:** light, dark or match Windows.
+  - **Appearance:** everything about the look in one place: the theme (with a preview), accent colour, finish,
+    text size, font, spacing, status colours, focus outline, motion, links, notices, your own themes, and the
+    counts on the left. A ↺ beside a setting puts it back.
   - **About & updates:** versions, the update check, and **Check a download** (see below).
   - **Maintenance:** re-run sorting on stored mail, **Back up now**, **Restore a backup…**, **Export releases
     to CSV**, open the data folder, and **Open the log** (Promorg's own record of what it did and any errors; no
