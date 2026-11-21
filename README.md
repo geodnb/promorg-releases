@@ -19,7 +19,7 @@ the promos into one tidy list of releases, and lets you track each one from "new
   "(PROMO) Artist - Title" newsletter) go to Promos marked ★: click **It's a promo** once and that sender's promos
   come in unmarked, or **Not a promo** to send its mail to Other. Invitations to receive a label's promos show
   in Promos marked ✉, with the opt-in page as the link.
-- **A workflow for each release.** New, Listened, Shortlisted, Scheduled, Uploaded or Rejected, with a tab for
+- **A workflow for each release.** New, Reviewed, Shortlisted, Scheduled, Uploaded or Rejected, with a tab for
   each and keyboard shortcuts to move releases between them.
 - **Spot problems at a glance.**
   - ● marks a release that got a new email after you'd dealt with it; it shows in New again until you've seen it.
@@ -143,7 +143,7 @@ removing one deletes its saved password but keeps the mail already imported.
   - **Search the web** (in the details pane, or right-click › Search the web for this release) opens a web
     search in your browser for the catalogue number, title and label, to find the artist when the email doesn't
     say. The search goes to DuckDuckGo; the app itself fetches nothing.
-  - **Ctrl+1 to Ctrl+6** move the selected releases to New, Listened, Shortlisted, Scheduled, Uploaded or
+  - **Ctrl+1 to Ctrl+6** move the selected releases to New, Reviewed, Shortlisted, Scheduled, Uploaded or
     Rejected. Right-click the list for the same options.
   - **The panel on the right** shows the selected release (F2 jumps to it). Click into it and it widens.
     - Its top shows the artist, title, label and catalogue number, with **Open promo**, **Add to setlist** and
