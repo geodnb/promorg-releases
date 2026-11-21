@@ -13,8 +13,9 @@ the promos into one tidy list of releases, and lets you track each one from "new
   deleted from your mailbox.
 - **One release per promo.** Artist, title, label, catalogue number, release date and the promo link are read
   from FATdrop, Label Engine, Inflyte, Promo-Box, Promoly and Promo-Cloud emails, and from labels that mail their
-  own promos. Each entry in a weekly digest or a label's list of releases becomes its own release. Reminders, digests and the
-  same promo arriving in several mailboxes all land on the same release instead of piling up as duplicates.
+  own promos. Each entry in a weekly digest or a label's list of releases becomes its own release. Reminders and digests land
+  on the same release instead of piling up as duplicates. The same promo arriving in two of your mailboxes is one
+  release in each mailbox (each keeps its own status, notes and link), shown on each mailbox's tab.
   Promos from a label or service the app doesn't know yet (a label's own mailout or list of promos, a
   "(PROMO) Artist - Title" newsletter) go to Promos marked ★: click **It's a promo** once and that sender's promos
   come in unmarked, or **Not a promo** to send its mail to Other. Invitations to receive a label's promos show
@@ -53,8 +54,8 @@ the promos into one tidy list of releases, and lets you track each one from "new
 
 ## Install
 
-Download from the [latest release](https://github.com/geodnb/promorg-releases/releases/latest). There
-are two ways to run it; pick one:
+Download from the [latest release](https://github.com/geodnb/promorg-releases/releases/latest). Promorg runs on
+Windows 10 or 11 (64-bit). There are two ways to run it; pick one:
 
 | Download | What it is | Updates |
 | --- | --- | --- |
@@ -62,7 +63,9 @@ are two ways to run it; pick one:
 | `Promorg-<version>-Standalone.exe` (about 67 MB) | **Standalone app.** One file, nothing to install, .NET included. Put it anywhere (Desktop, a USB stick) and double-click it. The first start takes a few seconds longer. | By hand: download the new `.exe` and use it instead of the old one |
 
 Both keep your data in the same place (`%LOCALAPPDATA%\Promorg`), so you can switch between them, update
-or uninstall without losing anything. Coming from Promo Organiser? The first time Promorg starts, it moves your
+or uninstall without losing anything, as long as every copy you use is the same version: a new version upgrades
+the database, and an older copy then can't open it (it keeps a copy of the database from before the upgrade; see
+Back up and restore). Coming from Promo Organiser? The first time Promorg starts, it moves your
 data from the old folder, `%LOCALAPPDATA%\PromoOrganiser`, to `%LOCALAPPDATA%\Promorg`. Close Promo Organiser
 first; if it's still open, Promorg asks you to close it. If you can't see its window, end PromoOrganiser.exe in
 Task Manager.
@@ -282,9 +285,10 @@ The hash should match the one in the `.sha256` file.
   update. You can turn this off in Settings › About & updates.
   - Nothing about you or your mail is sent.
   - As with any web request, those sites see your IP address.
-- **Everything else stays on your PC.** The only other connections are to your own mail servers, and to a
-  server a promo email names for its cover, when you choose to download that cover. There's no
-  telemetry, analytics or crash reporting.
+- **Everything else stays on your PC.** The only other connections are to your own mail servers; to a server a
+  promo email names for its cover, when you choose to download that cover; and to sqlite.org, only when you click
+  **Check for a newer SQLite**. Links (a promo, a service's website, a compose window in Gmail) open in your
+  browser only when you click them. There's no telemetry, analytics or crash reporting.
 - **Search the web** sends the release's catalogue number, title and label to DuckDuckGo, through your browser,
   only when you click it. Promo details can be unreleased, so use it only when you're happy for them to be
   searched for.
@@ -292,14 +296,29 @@ The hash should match the one in the `.sha256` file.
 - **The database isn't encrypted.** It holds your mail, including your personal promo links. Back it up with
   Settings › Maintenance › Back up now.
 
+## Back up and restore
+
+Everything (mail, releases, setlists, notes, settings) is in one file, `%LOCALAPPDATA%\Promorg\promorg.db`.
+**Settings › Maintenance › Back up now** writes a dated copy to the `Backups` folder beside it (the newest ten are
+kept), and a new version keeps a copy before it upgrades the database (`promorg.db.before-schema-<n>.<date>.bak`).
+Saved passwords aren't in the database or the backups: they're in Windows Credential Manager.
+
+**To restore:** close Promorg first (copying over the database while it's open damages it). In the data folder,
+delete `promorg.db-wal` and `promorg.db-shm` if they're there, then copy the backup over `promorg.db` (rename a
+`.bak` copy to `promorg.db`). Start Promorg again; mail that arrived since is fetched at the next sync.
+
 ## Uninstall
 
 - **Installer version:** Windows **Settings › Apps › Installed apps › Promorg › Uninstall**.
 - **Standalone version:** delete the `.exe`.
 
 Either way, your database (`%LOCALAPPDATA%\Promorg`) and the app passwords saved in Windows Credential
-Manager are left in place, so reinstalling picks up where you left off. Delete them yourself if you want them
-gone, and revoke the app passwords you made for it:
+Manager are left in place, so reinstalling picks up where you left off. To remove everything:
+- Delete the folder `%LOCALAPPDATA%\Promorg` (your mail, releases and backups).
+- In **Control Panel › Credential Manager › Windows Credentials**, remove the entries starting `Promorg:mailbox:`.
+- Delete `%TEMP%\Promorg-play` and `%TEMP%\Promorg-update` if they're there (temporary copies of tracks you
+  played, and update downloads).
+- Revoke the app passwords you made for it:
 - **Gmail:** at [myaccount.google.com/apppasswords](https://myaccount.google.com/apppasswords).
 - **Other services:** in your account's security settings, where you created them.
 
