@@ -55,11 +55,11 @@ the promos into one tidy list of releases, and lets you track each one from "new
 ## Install
 
 Download from the [latest release](https://github.com/geodnb/promorg-releases/releases/latest). Promorg runs on
-Windows 10 or 11 (64-bit). There are two ways to run it; pick one:
+Windows 10 or 11, 64-bit (on an ARM PC, Windows 11 only). There are two ways to run it; pick one:
 
 | Download | What it is | Updates |
 | --- | --- | --- |
-| `Promorg-<version>-Setup.exe` (about 6 MB) | **Installer.** Adds Promorg to the Start menu and to Settings › Apps, so you can uninstall it. Installs for your account with no admin rights, or for everyone. If the .NET 10 Desktop Runtime isn't on the PC, it offers to download it from Microsoft and install it. | Built in: Settings › About & updates › **Download and install** |
+| `Promorg-<version>-Setup.exe` (about 6 MB) | **Installer.** Adds Promorg to the Start menu and to Settings › Apps, so you can uninstall it. Installs for your account with no admin rights, or for everyone. If the .NET 10 Desktop Runtime isn't on the PC, it offers to download it from Microsoft and install it. | Built in: Settings › About & updates › **Download and install** (installed for everyone: download the new installer and run it yourself) |
 | `Promorg-<version>-Standalone.exe` (about 67 MB) | **Standalone app.** One file, nothing to install, .NET included. Put it anywhere (Desktop, a USB stick) and double-click it. The first start takes a few seconds longer. | By hand: download the new `.exe` and use it instead of the old one |
 
 Both keep your data in the same place (`%LOCALAPPDATA%\Promorg`), so you can switch between them, update
