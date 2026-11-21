@@ -44,7 +44,8 @@ the promos into one tidy list of releases, and lets you track each one from "new
 - **Safe with your mail.**
   - Mailboxes are opened read-only: the app never deletes, moves, labels or marks anything as read.
   - Emails are shown as plain text. Images and tracking pixels are never loaded, and attachments are listed
-    but never opened. The one exception is a cover you choose to download (below): the app asks first.
+    but never opened, except a music file sent to you that you choose to play or save in Submissions (below).
+    The one other exception is a cover you choose to download (below): the app asks first.
   - Promo-platform emails are checked against your mail service's anti-forgery results, so a forged "FATdrop"
     email isn't trusted. Mail from a label or service the app doesn't know is marked ★ until you've confirmed
     the sender (above).
@@ -230,8 +231,29 @@ removing one deletes its saved password but keeps the mail already imported.
   tells you which it couldn't find.
 - **Contacts.** The artists, labels, distributors, promo platforms and email senders in your promos, each on its own
   tab, worked out from your promos (nothing to keep up to date). Select one for its promos by status and the email
-  addresses its promos came from; **Show in Promos** shows only that contact's promos.
-- **Alt+1 to Alt+6** switch between Promos, Messages, Direct, Other, Setlist and Contacts.
+  addresses its promos came from; **Show in Promos** shows only that contact's promos. Keep your own **notes** on
+  each contact; the search finds them.
+- **Create a Promo.** Your own releases, to send out to a distributor, a promo service, a store such as Bandcamp,
+  or a label as a demo. Fill in the details (title, artist, label, catalogue number, UPC, release date, genre, ℗
+  and © lines, the promo text), the tracks (mix, ISRC, BPM, key, length, songwriters…), the artwork, and an
+  **artist profile** saved once for all their promos (Spotify and Apple Music IDs, links, bio: music-related
+  details only, nothing personal). Say where the files are kept (Dropbox, Google Drive, OneDrive, SoundCloud…)
+  and where it's going (Triple Vision, Label Worx, Inflyte, FATdrop, Bandcamp… or a service you add yourself), and
+  **What it still needs** lists what that kind of place asks for. **Copy all details** or **Save details…** (text,
+  or a CSV with a row a track) for the upload form. The **Emails** tab drafts a promo to DJs and channels, a demo
+  to a label, a release to a distributor, a pitch to playlists, blogs or press, an "out now" and a follow-up,
+  ready to open in Gmail or your email app, copy, or save as an email file. Promorg opens the services' websites
+  and your email; it never signs in to them, uploads or sends anything.
+- **Submissions.** Tracks sent to you for your channel or label, found in Direct and Other (a music file attached,
+  or a SoundCloud, Dropbox or WeTransfer link in an email about music), and music on your PC (**Scan this PC…**
+  says exactly what it does first, and finds music of a minute or more, skipping system and game sounds; or add a
+  folder or files). A track too big to keep with its email is fetched from your mailbox when you click **Download
+  from mailbox…** (read-only: only that file, and the email isn't marked as read). Listen through them with the player, see what the email and the file's own tags say, keep
+  notes, and mark each **New**, **Maybe**, **Accepted** or **Rejected**. Accepting drafts a reply saying you like
+  it and asking for more; rejecting drafts a polite no with your feedback; both from templates you can change.
+  Export the list as a playlist (.m3u8).
+- **Alt+1 to Alt+8** switch between Promos, Messages, Direct, Other, Setlist, Contacts, Create a Promo and
+  Submissions.
 - The line at the bottom of the window shows the app version and the .NET version it runs on. It turns red
   when either is out of date.
 
