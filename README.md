@@ -45,7 +45,8 @@ the promos into one tidy list of releases, and lets you track each one from "new
 - **Safe with your mail.**
   - Mailboxes are opened read-only: the app never deletes, moves, labels or marks anything as read.
   - Emails are shown as plain text. Images and tracking pixels are never loaded, and attachments are listed
-    but never opened, except a music file sent to you that you choose to play or save in Submissions (below).
+    but never opened, except a music file sent to you that you choose to play, save or open in your player in
+    Tracks (below).
     The one other exception is a cover you choose to download (below): the app asks first.
   - Promo-platform emails are checked against your mail service's anti-forgery results, so a forged "FATdrop"
     email isn't trusted. Mail from a label or service the app doesn't know is marked ★ until you've confirmed
@@ -60,7 +61,7 @@ Windows 10 or 11, 64-bit (on an ARM PC, Windows 11 only). There are two ways to 
 | Download | What it is | Updates |
 | --- | --- | --- |
 | `Promorg-<version>-Setup.exe` (about 6 MB) | **Installer.** Adds Promorg to the Start menu and to Settings › Apps, so you can uninstall it. Installs for your account with no admin rights, or for everyone. If the .NET 10 Desktop Runtime isn't on the PC, it offers to download it from Microsoft and install it. | Built in: Settings › About & updates › **Download and install** (installed for everyone: download the new installer and run it yourself) |
-| `Promorg-<version>-Standalone.exe` (about 67 MB) | **Standalone app.** One file, nothing to install, .NET included. Put it anywhere (Desktop, a USB stick) and double-click it. The first start takes a few seconds longer. | By hand: download the new `.exe` and use it instead of the old one |
+| `Promorg-<version>-Standalone.exe` (about 67 MB) | **Standalone app.** One file, nothing to install, .NET included. Keep it in a folder of its own (not Downloads or the Desktop, where another download's files could sit beside it) and double-click it. The first start takes a few seconds longer. The installer is the simpler choice if you're not sure. | By hand: download the new `.exe` and use it instead of the old one |
 
 Both keep your data in the same place (`%LOCALAPPDATA%\Promorg`), so you can switch between them, update
 or uninstall without losing anything, as long as every copy you use is the same version: a new version upgrades
@@ -129,7 +130,9 @@ real account yet. If one doesn't, Test connection says why.
 ### Afterwards
 
 Repeat for each account. You can edit, test, disable or remove a mailbox in Settings › Mailboxes at any time;
-removing one deletes its saved password but keeps the mail already imported.
+removing one deletes its saved password but keeps the mail already imported. **Delete with its mail…** removes the
+mailbox and everything Promorg keeps from it (it asks first). A saved password is only ever sent to the server it
+was saved for: change a mailbox's server or login and Promorg asks for the password again.
 
 ## How to use it
 
@@ -220,8 +223,9 @@ removing one deletes its saved password but keeps the mail already imported.
   - **Release dates:** choose which date checks run.
   - **Appearance:** light, dark or match Windows.
   - **About & updates:** versions, the update check, and **Check a download** (see below).
-  - **Maintenance:** re-run sorting on stored mail, **Back up now**, **Export releases to CSV**, and open the
-    data folder.
+  - **Maintenance:** re-run sorting on stored mail, **Back up now**, **Restore a backup…**, **Export releases
+    to CSV**, open the data folder, and **Open the log** (Promorg's own record of what it did and any errors; no
+    mail text, addresses or passwords).
 - **After an update,** the first start re-reads your stored mail with the new version's promo readers, so
   older mail benefits too. A progress line shows at the bottom, and it can't be stopped part-way.
   Releases you've changed are kept, and a notice says what moved.
@@ -247,16 +251,17 @@ removing one deletes its saved password but keeps the mail already imported.
   to a label, a release to a distributor, a pitch to playlists, blogs or press, an "out now" and a follow-up,
   ready to open in Gmail or your email app, copy, or save as an email file. Promorg opens the services' websites
   and your email; it never signs in to them, uploads or sends anything.
-- **Submissions.** Tracks sent to you for your channel or label, found in Direct and Other (a music file attached,
-  or a SoundCloud, Dropbox or WeTransfer link in an email about music), and music on your PC (**Scan this PC…**
+- **Tracks.** Your submissions, the tracks sent to you for your channel or label, found in Direct and Other (a
+  music file attached, or a SoundCloud, Dropbox or WeTransfer link in an email about music), and music on your PC (**Scan this PC…**
   says exactly what it does first, and finds music of a minute or more, skipping system and game sounds; or add a
   folder or files). A track too big to keep with its email is fetched from your mailbox when you click **Download
   from mailbox…** (read-only: only that file, and the email isn't marked as read). Listen through them with the player, see what the email and the file's own tags say, keep
-  notes, and mark each **New**, **Maybe**, **Accepted** or **Rejected**. Accepting drafts a reply saying you like
+  notes, and mark each **New**, **Maybe**, **Accepted** or **Rejected**. Tabs show all tracks, just the
+  submissions, or just what's on your PC. Accepting drafts a reply saying you like
   it and asking for more; rejecting drafts a polite no with your feedback; both from templates you can change.
   Export the list as a playlist (.m3u8).
 - **Alt+1 to Alt+8** switch between Promos, Messages, Direct, Other, Setlist, Contacts, Create a Promo and
-  Submissions.
+  Tracks.
 - The line at the bottom of the window shows the app version and the .NET version it runs on. It turns red
   when either is out of date.
 
@@ -303,17 +308,20 @@ Everything (mail, releases, setlists, notes, settings) is in one file, `%LOCALAP
 kept), and a new version keeps a copy before it upgrades the database (`promorg.db.before-schema-<n>.<date>.bak`).
 Saved passwords aren't in the database or the backups: they're in Windows Credential Manager.
 
-**To restore:** close Promorg first (copying over the database while it's open damages it). In the data folder,
-delete `promorg.db-wal` and `promorg.db-shm` if they're there, then copy the backup over `promorg.db` (rename a
-`.bak` copy to `promorg.db`). Start Promorg again; mail that arrived since is fetched at the next sync.
+**To restore:** **Settings › Maintenance › Restore a backup…**. Pick a backup (from the Backups folder, or a
+`.bak` copy); Promorg checks it, then puts it back the next time it starts, keeping your current data in
+`Backups\before-restore-<date>.db` first. Mail that arrived since the backup is fetched again at the next sync.
+Promorg also checks the database each time it starts, before a backup and before an upgrade: if it's damaged, it
+says so and offers to restore a backup instead of carrying on.
 
 ## Uninstall
 
 - **Installer version:** Windows **Settings › Apps › Installed apps › Promorg › Uninstall**.
 - **Standalone version:** delete the `.exe`.
 
-Either way, your database (`%LOCALAPPDATA%\Promorg`) and the app passwords saved in Windows Credential
-Manager are left in place, so reinstalling picks up where you left off. To remove everything:
+Either way, your database (`%LOCALAPPDATA%\Promorg`) and the mailbox passwords saved in Windows Credential
+Manager are left in place, so reinstalling picks up where you left off (the uninstaller says so, and asks you to
+close Promorg first if it's open). To remove everything:
 - Delete the folder `%LOCALAPPDATA%\Promorg` (your mail, releases and backups).
 - In **Control Panel › Credential Manager › Windows Credentials**, remove the entries starting `Promorg:mailbox:`.
 - Delete `%TEMP%\Promorg-play` and `%TEMP%\Promorg-update` if they're there (temporary copies of tracks you
