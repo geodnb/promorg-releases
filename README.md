@@ -161,11 +161,15 @@ removing one deletes its saved password but keeps the mail already imported.
   - **Release dates:** if a date is flagged ⚑, the panel says why. Fix it, or click **The date is right**.
     "Dates to check" above the list shows only flagged ones.
 - **Messages, Direct and Other.** One email per row.
-  - **Read an email:** select it to read it as plain text. Attachments are listed by name and size: open the
-    email in your webmail to get them.
+  - **Read an email:** select it to read it as plain text (Enter or double-click opens its promo link, or reads it
+    in its own window). Attachments are listed by name and size. **Open in Gmail** opens the email itself in your
+    browser, in that mailbox's Google account, to get its attachments or reply; Yahoo, iCloud, AOL, Fastmail and
+    Zoho mailboxes open their webmail instead.
   - **Open a link:** every link in the email is listed with the site it goes to, each with an Open button.
     File-sharing links (Google Drive, Dropbox, WeTransfer and others) come first. A link to a look-alike web
-    address is shown in its real form, and the app asks before opening it.
+    address is shown in its real form, and the app asks before opening it. In Messages and Direct, **Open link**
+    opens the promo link, or else the email's first web link (an artist's mailchi.mp page, say), and **Create release from this** gives
+    that link to the release.
   - **Done with an email:** **Mark handled** (Dismiss in Other) ticks it off. Ctrl+click or Shift+click to
     select several, and it marks them all. **Mark all shown handled** (**Dismiss all shown**) does every email
     the search and filters show. "Hide handled" hides the ones you've dealt with.
